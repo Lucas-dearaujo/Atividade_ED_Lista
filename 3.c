@@ -52,5 +52,6 @@ int main(){
   Add_in_Pilha_main(5);
   Add_in_Pilha_main(7);
   Add_in_Pilha_main(5);
+  Add_in_Pilha_main(7);
   imprimir();
 }
