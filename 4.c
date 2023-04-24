@@ -96,7 +96,7 @@
     char teste [25];
     char c;
     int i= 0;
- printf("Calculadora pos-fixada.\nOBS:limitado a  no minimo e maximo 3 operacoes e 4 numeros, menos que isso nao funciona.\nEx:input 1 2 - 4 5 + *\ndigite uma operacao\n.");
+ printf("Calculadora pos-fixada.\nOBS:limitado a  no minimo e maximo 3 operacoes e 4 numeros, menos ou mais que isso nao funciona.\nEx:input 1 2 - 4 5 + *\nDigite uma operacao, e aperte enter para retornar o valor.\n.");
     do {
         c=getchar();
         teste[i]=c;
