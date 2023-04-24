@@ -96,18 +96,15 @@
     char teste [25];
     char c;
     int i= 0;
- 
+ printf("Calculadora pos-fixada.\nOBS:limitado a  no minimo e maximo 3 operacoes e 4 numeros, menos que isso nao funciona.\nEx:input 1 2 - 4 5 + *\ndigite uma operacao\n.");
     do {
         c=getchar();
         teste[i]=c;
         i++;
     }while(c != '\n');
-    teste[i-1]='\0';
-    
-    printf("%s\n",teste);
-    printf("%d", calc(teste));
-    //{"1 2 - 4 5 + *"};
-    //input 1 2 - 4 5 + * = -9
+    teste[i-1]='\0';   
+    printf("%s =",teste);
+    printf(" %d", calc(teste));
     return 0;
     
 }
