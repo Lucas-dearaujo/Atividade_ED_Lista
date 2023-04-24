@@ -1,0 +1,12 @@
+#A estrutura escolhida foi o encadeamento.
+
+*Encadeamento
+-A fila apesar de compartilhar a simplicidade com a pilha, diferente dela, usa ponteiros inicio e fim, seu conteito diz que o primeiro adicionado é o primeiro a sair.
+
+#Porque não:
+
+*Array
+-Apesar de vetores serem uteis controlando as posições, sua limitançao envolve o não dinamismo, ou seja com n nós? vetor não consegue acompanhar a complexidade sem haver um aumento consideravel de recursos ou memoria.
+
+*Dupla encadeada
+-Apesar do conceito de fila ser mais complexo que pilha, ainda, não se a necessidade de duplo encadeamento, usando uma logica simples de fazer os ponteiros finais apontarem para os novos nós e o remover usando inicio é possivel fazer uma fila sem duplo encadeamento.

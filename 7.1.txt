@@ -1,0 +1,25 @@
+Durante a solução da questão encontrei 3 metodos para implimentar essa TAD que é uma mistura de tads.
+
+
+1º Uma função que recebe o endereço da criação de uma tad, e aloca dentro de si. ex: Add_Lista_in_Pilha(Add_pilha(1 ,2 ,3 ,4))
+*A primeira ideia que me veio, uma função criaria a pilha, e retornaria o endereço do topo para a função Add_Lista_in_Pilha, que criaria uma pilha. 
+-o problema? nao funciona para n casos e se limita ao tamanho progamado.
+
+
+2º Uma função que cria tudo dentro da mesma função.  Add_TAD(1 ,2 ,3 ,4)
+* O metodo consistia em criar mallocs para cada parametro dado na função e criar a parte principal junto da parte secundaria. 
+-Era uma melhoria da ideia anterior porem com o mesmo problema para n Nós, O problema que esse metodo é limitado ao tamanho da minha função que nesse caso foi 4 elementos.
+
+#Melhor caso encontrado:
+3º A utilização de duas funções, onde uma criaria no primeiro momento, o primeiro nó da estrutura principal, e criaria n nós da estrutura secundaria ate que uma segunda função fosse chamada para adicionar um novo nó na estrutura principal.
+ex: Add(10) Add(20) Add(30) Add(40) Add_in_main() a função encerra a adição de nos no primeiro no da estrutura main e começa no proximo.
+-Possivel problema? nao é otimizado porem foi o metodo que eu encontrei para funcionar.
+
+O codigo consiste em variaveis globais que apotam para a estrutura principal, e dados dentro dos no principais que guardam os ponteiros das tads secundarias.
+-No primeiro caso da lista vazia, ele cria ambos 1º no da main e da secundaria, e junta os dois.
+-O secundo caso o else if, verifica se esses ponteiros armezenados sao nulos, como foi adcionado no primeiro if, nunca acontece, esse caso vai acontecer quando ouver a chamda de função Add_in_main que seta esses ponteiros como nulos
+-o else faz a adição normal utilizando a logica da tad selecionada ate que a função Add_in_main seja chamada.
+
+# Não me aprofundei nos conceitos de remover, pois entendi que a ideia principal da questao era como eu faria esse controle de fluxo
+-No meu caso fiz o controle com duas funções.
+

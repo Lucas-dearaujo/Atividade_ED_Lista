@@ -1,0 +1,12 @@
+#A estrutura escolhida foi o encadeamento.
+
+*Encadeamento
+-Pilha é um tipo de estrutura simples, apenas um ponteiro "inicio ou topo" seu conceito de o primeiro adicionado é o ultimo removido promove essa simplicicade, que casa bem com o encadeamento que so usa ponteiros em uma direção.
+
+#Porque não:
+
+*Array
+-Apesar de vetores serem uteis controlando as posições, sua limitançao envolve o não dinamismo, ou seja com n nós? vetor não consegue acompanhar a complexidade sem haver um aumento consideravel de recursos ou memoria.
+
+*Dupla encadeada
+-Como ja citado, o conceito de pilha é muito simplificado para haver a necessidade de duplo encadeamento, isso é visto como gasto desnecessario de memoria, um exemplo mais complexo? dar a liberdade de o usuario escolher as posições, isso aumenta a complexidade e exige dupla, porem a pilha firma: O primeiro adicionado? ultimo removido.
