@@ -72,12 +72,12 @@ void imprimir(){
         //Testes: Input acbda = adbca       
  int main(){
     char c;
+    printf("Algoritmo de Criptografia.\nVogais sao exibidas normais, Consoantes consecutivas sao retornadas na ordem inversa\nDigite uma string e aperte enter para finalizar.\n");
     do {
         c=getchar();
         if(c != '\n'){
         add_pilha(c);
     }
     }while(c != '\n');
-    printf("nos:%d\n", tam);
     imprimir();
  }
