@@ -1,83 +1,59 @@
-#include<stdio.h>
-#include<stdlib.h>
- typedef struct fila{
-    char ch;
-    struct fila * prox;
-    struct fila * ant;    
- }F_D;
- F_D  * inicio = NULL;
- F_D  * fim = NULL;
- 
- int tam=0;
- 
- void add_pilha(char n){
-    F_D * novo = malloc(sizeof(F_D));
-    novo->ch=n;
-    novo ->prox =NULL;
-    novo->ant=NULL;
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct no{
+    char n;
+    struct no * prox;
+}NO;
+typedef struct pilha{
+    struct no * topo;
+    int tam;
+}PILHA;
 
-    if(tam == 0){
-        inicio= novo;
-        fim = novo;
+void add(char n , PILHA * p){
+NO * novo = malloc(sizeof(NO));
+novo->prox= NULL;
+novo->n= n;
+
+    if(p->topo == NULL){
+        p->topo = novo;
+        if(novo->n == 'a' || novo->n == 'e' || novo->n == 'i' || novo->n == 'o' || novo->n == 'u'){
+           printf("%c", novo->n); 
+        }
+    }
+    else if(novo->n != 'a' && novo->n != 'e' && novo->n != 'i' && novo->n != 'o' && novo->n != 'u'){
+        novo->prox = p->topo;
+        p->topo = novo;
+        
     }
     else{
-        novo->ant=fim;
-        fim->prox = novo;
-        fim = novo;
-
-       //bcd
-       //dcb
-       //NULL <- bcda 
+        NO * aux = p->topo;
+        NO * lixo = p->topo;
+            for(int i = p->tam; i > 0; i--){
+                printf("%c", aux->n);
+                aux = aux->prox;
+                free(lixo);
+                lixo = aux;
+                p->tam--;
+            }
+            printf("%c", novo->n);
+            free(novo);
+            p->topo = NULL;
     }
-    tam++;
-
+    p->tam++;
 }
-void imprimir(){
-    F_D * aux = inicio;
-    F_D * aux2;
-    // 97 101 105 111 117
-    while(aux != NULL){
-            if(aux-> ch == 97 || aux-> ch == 101 || aux-> ch == 105 || aux-> ch == 111 || aux-> ch == 117){
-              printf("%c" , aux->ch);
-              aux=aux->prox;
-            }
-            else if(aux->prox->ch == 97 || aux->prox->ch == 101 || aux->prox->ch == 105 || aux->prox->ch == 111 || aux->prox->ch == 117){
-              printf("%c" , aux->ch);
-              aux=aux->prox;
-            }
-            else{
-            
-            for(aux2= aux; aux2->prox != NULL;){       
-                  if(aux2->prox->ch != 97 && aux2->prox->ch != 101 && aux2->prox->ch != 105 && aux2->prox->ch != 111 && aux2->prox->ch != 117){
-                  aux2=aux2->prox; 
-                  }
-              else{
-                break;
-              }   
-            }
-            aux=aux2;
-            for(aux2= aux; aux->ant != NULL;){
-                  if(aux2->ch != 97 && aux2->ch != 101 && aux2->ch != 105 && aux2->ch != 111 && aux2->ch != 117){
-                  printf("%c" , aux2->ch);
-                  aux2=aux2->ant;
-                  }
-                  else{
-                    break;
-                  }   
-            }
-          }
-          }
-  }
-          
-        //Testes: Input acbda = adbca       
- int main(){
-    char c;
-    printf("Algoritmo de Criptografia.\nVogais sao exibidas normais, Consoantes consecutivas sao retornadas na ordem inversa\nDigite uma string e aperte enter para finalizar.\n");
-    do {
-        c=getchar();
-        if(c != '\n'){
-        add_pilha(c);
+int main(){
+    char temp;
+    PILHA * p = malloc(sizeof(PILHA));
+    p->topo = NULL;
+    p->tam = 0;
+    printf("Digita ai\n"); 
+  do
+  {
+    temp = getchar();
+    if(temp != '\n'){
+        add(temp, p);
     }
-    }while(c != '\n');
-    imprimir();
- }
+  }while(temp != '\n');
+ 
+}
