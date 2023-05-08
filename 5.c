@@ -29,24 +29,10 @@ void empilha(PILHA * p , char n){
     if(p->topo == NULL){
         p->topo = novo;
     }
-    else if(novo->n != 'a' && novo->n != 'e' && novo->n != 'i' && novo->n != 'o' && novo->n != 'u'){
+    else{
         novo->prox = p->topo;
         p->topo = novo;
         
-    }
-    else{
-        NO * aux = p->topo;
-        NO * lixo = p->topo;
-            for(int i = p->tam; i > 0; i--){
-                printf("%c", aux->n);
-                aux = aux->prox;
-                free(lixo);
-                lixo = aux;
-                p->tam--;
-            }
-            printf("%c" , novo->n);
-            free(novo);
-            
     }
     p->tam++;
 }
@@ -64,15 +50,16 @@ int main(){
   do
   {
     temp = getchar();
-    if(temp == '\n'){
-    desempilha(p);
-    }
-    if(temp != 'a' && temp != 'e' && temp != 'i' && temp != 'o' && temp != 'u'){
+  
+    if(temp != 'a' && temp != '\n' && temp != 'e' && temp != '\n' && temp != 'i' && temp != '\n' && temp != 'o' && temp != '\n' && temp != 'u' && temp != '\n'){
         empilha(p, temp);
     }
-    else if(temp == 'a' && temp == 'e' && temp == 'i' && temp == 'o' && temp == 'u'){
-        desempilha(p);
-        printf("%c", temp);
+    else if(temp == 'a' || temp == 'e' || temp == 'i' || temp == 'o'  || temp == 'u'){
+           desempilha(p);
+            printf("%c", temp);
+    }
+    else{
+    desempilha(p);
     }
   }while(temp != '\n');
  
