@@ -1,9 +1,22 @@
 # Atividade_ED_Lista
 Lista de exercicios da tati:{Lista, Lista encadeada, Lista duplamente encadeada, Recursão, Pilha, Fila, Mistura de TADS}
 
+#Questões feitas com a logica certa
+1
+2
+3
+5
 
-Lista 1 - Exercícios
- 
+#Questões que não deu tempo para refazer usando a logica certa (desvinculo de variaveis globais) porem funcionam.
+4
+6
+7
+8
+
+Obs:as questões em si usam a ideia de usar dados locais em vez de variaveis globais, coisa que não foi ensinada até depois da sescomp, durante a de 1º semana do prazo, resumidamente, quem aprendeu usando globais e tentou fazer a lista com oque tinha aprendido, perdeu tempo e se desgastou, fazendo uma logica que não seria a 'certa' ate aprender o certo depois da sescomp.
+As 2 semanas  seguintes consistiram em esforço consideravel para resolver e entender ,ja que ate entao, a logica de resposta mesmas era bem diferente dos exercicios entendidos em sala,não os conceitos mas aplicações, que faziam trabalhar pesadamente logica e raciocionio, ao menos foi essa a sensação. eventualmente levando a desistencia de refazer todas questões por prazo de tempo e vontade.
+
+Lista 1 - Exercícios 
 X 1.1 Considere uma Pilha de elementos inteiros positivos onde é aceito a inserção de elementos iguais.
 Crie os seguintes funções:
 a) Adicionar um elemento na pilha;
